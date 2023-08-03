@@ -24,6 +24,12 @@ const PhoneNumber = require("awesome-phonenumber");
 
 const store = makeInMemoryStore({ logger: pino().child({ level: "silent", stream: "store" }) });
 
+
+//env
+require('dotenv').config();
+const keyopenai = process.env.keyopenai;
+
+
 const color = (text, color) => {
   return !color ? chalk.green(text) : chalk.keyword(color)(text);
 };
